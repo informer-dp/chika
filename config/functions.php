@@ -37,17 +37,21 @@ function signin_check ($login,$pass){
 }
 function operation_select($pdo){
     $operation = "SELECT * FROM `helper_operations` ORDER BY `name`";
-    echo "<select name='operation' class='form-select form-select-lg'>";
+    echo "<select name='operation' class='form-select' required>";
+    echo "<option value='' disabled selected>Выберите операцию</option>";
     foreach ($pdo->query($operation) as $row) {
     echo "<option name='' value='".$row['id']."'>".$row['name']."</option>";
     }
     echo "</select>";
     }
 function worker_select($pdo){
-      $worker = "SELECT * FROM `helper_workers` ORDER BY `name`";
-      echo "<select name='worker' class='form-select form-select-lg'>";
+      $worker = "SELECT * FROM helper_workers ORDER BY `name`";
+      echo "<select name='worker' class='form-select' required>";
+      if(!isset($_GET['worker'])){
+        echo "<option value='' disabled selected>Выберите сотрудника</option>";
+      }
       foreach ($pdo->query($worker) as $row) {
-        if($_GET['worker']==$row['id']){
+        if((isset($_GET['worker']))&&(($_GET['worker']==$row['id']))){
           $selected=" selected";
         }else{
           $selected="";
@@ -80,4 +84,24 @@ function get_price_by_operation($pdo,$table,$id){
     $stm->execute(array($id));
     $price=$stm->fetchColumn();
     return $price;
+}
+function human_date_format($input_date){
+  $months = array(
+    '01' => 'января',
+    '02' => 'февраля',
+    '03' => 'марта',
+    '04' => 'апреля',
+    '05' => 'мая',
+    '06' => 'июня',
+    '07' => 'июля',
+    '08' => 'августа',
+    '09' => 'сентября',
+    '10' => 'октября',
+    '11' => 'ноября',
+    '12' => 'декабря'
+  );
+  $year=substr($input_date,0,4);
+  $month=substr($input_date,5,2);
+  $day=substr($input_date,8,2);
+  return $day." <span style='opacity:0.4;'>".$months[$month]."</span> <br><span style='opacity:0.2;font-size:0.5em;'>".$year."</span>";
 }

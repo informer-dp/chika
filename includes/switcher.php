@@ -15,7 +15,7 @@
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Список человеков
+              Операции (список человеков)
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
               <li><a class="dropdown-item" href="/?inc=operations">Все</a></li>
@@ -28,6 +28,18 @@
               ?>
             </ul>
           </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Справочники
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+              <li><a class="dropdown-item" href="/?inc=workers">Сотрудники</a></li>
+              <li><a class="dropdown-item" href="/?inc=helper_operations">Операции</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="/?inc=about">О программе</a></li>
+            </ul>
+          </li>
+
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="/actions/auth.php?action=exit">Выход</a>
           </li>
@@ -36,6 +48,7 @@
     </div>
   </nav>
 </header>
+<section class="container">
 <?php
 /********SWITCHER********/
 if(isset($_GET['inc'])){
@@ -44,9 +57,15 @@ if(isset($_GET['inc'])){
     case 'helper':
       include_once('helper.php');
       break;
-      case 'operations':
-        include_once('operations.php');
-        break;
+    case 'operations':
+      include_once('operations.php');
+      break;
+    case 'operations_dates':
+      include_once('operations_dates.php');
+      break;
+    case 'workers':
+      include_once('workers.php');
+      break;
     default:
       include_once('dashboard.php');
       break;
@@ -55,3 +74,4 @@ if(isset($_GET['inc'])){
   include_once('dashboard.php');
 }
 ?>
+</section>
