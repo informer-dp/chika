@@ -32,9 +32,6 @@ require_once('config/connection.php');
     echo '</pre>';*/
 
     ?>
-
-
-
     <section name='viewer' id='viewer'>
 <?php //include_once('includes/switcher.php'); ?>
     </section>

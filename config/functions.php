@@ -44,6 +44,16 @@ function operation_select($pdo){
     }
     echo "</select>";
     }
+function product_select($pdo){
+        $product = "SELECT * FROM `helper_products` ORDER BY `name`";
+        echo "<select name='product' class='form-select' required>";
+        echo "<option value='' disabled selected>Выберите изделие</option>";
+        foreach ($pdo->query($product) as $row) {
+        echo "<option name='' value='".$row['id']."'>".$row['name']."</option>";
+        }
+        echo "</select>";
+        }
+
 function worker_select($pdo){
       $worker = "SELECT * FROM helper_workers ORDER BY `name`";
       echo "<select name='worker' class='form-select' required>";

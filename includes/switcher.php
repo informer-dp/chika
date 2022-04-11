@@ -4,7 +4,7 @@
 <header>
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <div class="container-fluid">
-      <a class="navbar-brand" href="/">Chirvabase</a>
+      <a class="navbar-brand" href="/"><img src='img/favorite_black_24dp.svg'>&nbsp;<b>ChiKa</b></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -18,12 +18,12 @@
               Операции (список человеков)
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-              <li><a class="dropdown-item" href="/?inc=operations">Все</a></li>
+              <li><a class="dropdown-item" href="/?inc=operations_dates">Все</a></li>
               <li><hr class="dropdown-divider"></li>
               <?php
               $worker = "SELECT * FROM `helper_workers` ORDER BY `name`";
               foreach ($pdo->query($worker) as $row) {
-              echo '<li><a class="dropdown-item" href="/?inc=operations&worker='.$row['id'].'">'.$row['name'].'</a></li>';
+              echo '<li><a class="dropdown-item" href="/?inc=operations_dates&worker='.$row['id'].'">'.$row['name'].'</a></li>';
               }
               ?>
             </ul>
@@ -56,6 +56,12 @@ if(isset($_GET['inc'])){
   switch ($inc) {
     case 'helper':
       include_once('helper.php');
+      break;
+    case 'helper_operations':
+      include_once('helper_operations.php');
+      break;
+    case 'card_operation':
+      include_once('card_operation.php');
       break;
     case 'operations':
       include_once('operations.php');
