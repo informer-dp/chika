@@ -115,3 +115,24 @@ function human_date_format($input_date){
   $day=substr($input_date,8,2);
   return $day." <span style='opacity:0.4;'>".$months[$month]."</span> <br><span style='opacity:0.2;font-size:0.5em;'>".$year."</span>";
 }
+function session_msg(){
+  if(isset($_SESSION['msg'])){
+    echo '<div class="modal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Чирвочка такая мададєц!)))</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>'.$_SESSION['msg'].'.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>';
+unset($_SESSION['msg']);
+  }
+}

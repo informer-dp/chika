@@ -5,6 +5,7 @@ ini_set('display_startup_errors', 1);
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 $workers = "SELECT * FROM helper_workers ORDER BY `name` ASC";
 $stmt=$pdo->query($workers);
+session_msg();
 ?>
 <br>
 <h2>Работники</h2><hr>

@@ -5,7 +5,7 @@
  ini_set('display_errors', 1);
  ini_set('display_startup_errors', 1);
  $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
- $operations = "SELECT * FROM `helper_operations` ORDER BY `name` ASC";
+ $operations = "SELECT * FROM `helper_operations` ORDER BY `product`,`name` ASC";
  $stmt=$pdo->query($operations);
  $op=" по всем изделиям";
  if(isset($_GET['product'])){
@@ -19,12 +19,22 @@
    echo  '<input class="form-control me-2" type="date" value="'.date("Y-m-d").'">';
    echo '<button class="btn btn-outline-success" type="submit">Search</button>';
    echo '</form>';*/
+   session_msg();
  ?>
  <br>
  <h2>Справочник операций<?php echo $op;?></h2><hr>
  <div id='wrapper'>
  <div id="actions">
-   <?php //include_once'forms/operation_add1.php';?>
+ </div>
+ <p>
+   <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+     Добавить
+   </a>
+ </p>
+ <div class="collapse" id="collapseExample">
+   <div class="card card-body">
+     <?php include_once'forms/card_operation_add.php';?>
+   </div>
  </div>
  <hr>
  <?php

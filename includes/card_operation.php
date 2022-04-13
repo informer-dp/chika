@@ -10,6 +10,7 @@ if(isset($_GET['opid'])){
     $stmt->execute(array('opid' => $_GET['opid']));
     foreach ($stmt as $row) {;}
 }
+session_msg();
 ?>
 <br>
 <h2>Карточка операции &laquo;<span style="color: #CCCCCC;"><?php echo $row['name'];?></span>&raquo;</h2><hr><br>
@@ -43,4 +44,6 @@ if(isset($_GET['opid'])){
       <?php include_once'forms/card_operation.php';?>
     </div>
   </div>
+
 </div>
+<a href="/?inc=helper_operations"><img class="bordered" src='img/arrow_back_black_24dp.svg'>Назад к справочнику операций</a>

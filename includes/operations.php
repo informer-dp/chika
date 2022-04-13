@@ -5,6 +5,7 @@ while($row=mysql_fetch_assoc($res)){
 	$order=$row;
 	echo $order['id'],"<br/>",$order['type']," ",$order['comment'];
 }*/
+session_msg();
 ?>
 
 <?php

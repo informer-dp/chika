@@ -10,12 +10,9 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarScroll">
         <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/">Дашбоард</a>
-          </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Операции (список человеков)
+            <img src='img/assignment_white_24dp.svg'>&nbsp;  Операции (список человеков)
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
               <li><a class="dropdown-item" href="/?inc=operations_dates">Все</a></li>
@@ -30,18 +27,18 @@
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Справочники
+              <img src='img/book_white_24dp.svg'> Справочники
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-              <li><a class="dropdown-item" href="/?inc=workers">Сотрудники</a></li>
-              <li><a class="dropdown-item" href="/?inc=helper_operations">Операции</a></li>
+              <li><a class="dropdown-item" href="/?inc=workers"><img src='img/account_circle_black_24dp.svg'>  Сотрудники</a></li>
+              <li><a class="dropdown-item" href="/?inc=helper_operations"><img src='img/pending_actions_black_24dp.svg'>  Операции</a></li>
               <li><hr class="dropdown-divider"></li>
               <li><a class="dropdown-item" href="/?inc=about">О программе</a></li>
             </ul>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/actions/auth.php?action=exit">Выход</a>
+            <a class="nav-link active" aria-current="page" href="/actions/auth.php?action=exit">Выход&nbsp;&nbsp;<img src='img/logout_white_24dp.svg'></a>
           </li>
         </ul>
       </div>

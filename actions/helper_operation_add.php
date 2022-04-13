@@ -5,22 +5,23 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 require_once'../config/connection.php';
 require_once'../config/functions.php';
+$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 //adding a new operation
  if(isset($_POST)){
+      //echo "<pre>"; print_r($_POST); echo "</pre>";
      $allowed = array(
          "name",
-         "phone",
-         "function",
-         "notes"
+         "product",
+         "price",
+         "notes",
          ); // allowed fields
 
-     $sql = "INSERT INTO helper_workers SET ".pdoSet($allowed,$values);
+     $sql = "INSERT INTO helper_operations SET ".pdoSet($allowed,$values);
  //array_view($_POST);
  //echo $sql;
  $stm = $pdo->prepare($sql);
  //array_view($values);
  $stm->execute($values);
- $_SESSION['msg']="Сотрудник  <b>".$_POST['name'] ."</b> успешно добавлен";
  header("Location:".$_SERVER['HTTP_REFERER']);
  }
  ?>

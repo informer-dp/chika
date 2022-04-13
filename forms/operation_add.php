@@ -1,7 +1,13 @@
 <?php
 /*OPERATION ADD*/
  ?>
- <form class="docker-form" name="operation_add" id="operation_add" action="actions/operation_add.php" method="post" enctype="multipart/form-data">
+ <form
+ class="docker-form"
+ name="operation_add"
+ id="operation_add"
+ action="actions/operation_add.php"
+ method="post"
+ enctype="multipart/form-data">
 
 <h4>
   <button type="button" class="btn-close" aria-label="Close" onClick="elementToggle('operation_add');"></button>

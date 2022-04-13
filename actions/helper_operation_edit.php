@@ -2,28 +2,25 @@
 session_start();
 require_once'../config/connection.php';
 require_once'../config/functions.php';
+$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 //adding a new operation
  if(isset($_POST)){
-   $price=get_price_by_operation($pdo,"helper_operations",$_POST['operation']);
-   $_POST['price']=$price;
       //echo "<pre>"; print_r($_POST); echo "</pre>";
      $allowed = array(
-         "worker",
-         "operation",
-         "quantity",
+         "name",
+         "product",
          "price",
-         "paid",
-         "operation_date",
-         "user",
-         "comment"
+         "notes",
          ); // allowed fields
 
-     $sql = "INSERT INTO operations SET ".pdoSet($allowed,$values);
+     $sql = "UPDATE helper_operations SET ".pdoSet($allowed,$values)." WHERE `id`=:id";
  //array_view($_POST);
  //echo $sql;
  $stm = $pdo->prepare($sql);
  //array_view($values);
+ $values['id']=$_POST['id'];
  $stm->execute($values);
+ $_SESSION['msg']="Операция <b>".$_POST['name']."</b> успешно отредактирована";
  header("Location:".$_SERVER['HTTP_REFERER']);
  }
  ?>

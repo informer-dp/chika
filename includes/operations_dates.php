@@ -30,7 +30,7 @@ $total=0;
 $total_day=0;
 ?>
 <br>
-<h2>Операции<?php echo $op;?></h2><hr>
+<h2><img src='img/fact_check_black_24dp.svg' width="42">  Операции<?php echo $op;?></h2><hr>
 <div id='wrapper'>
 <div id="actions">
   <?php include_once'forms/operation_add1.php';?>
@@ -63,7 +63,7 @@ $total_day=0;
                     <th>грн.</th>
                       </tr>";
                     }
-      echo "<tr><td colspan='7' style='border:none;background-color: #f1f1f1;'><br><br><h4>".human_date_format($row['operation_date'])."</h4></td></tr>";
+      echo "<tr><td colspan='7' style='border:none;background-color: #f1f1f1;'><br><h4>".human_date_format($row['operation_date'])."</h4></td></tr>";
       $date=$row['operation_date'];
       $total_day=0;
     }
