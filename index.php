@@ -6,12 +6,18 @@ if(!isset($_SESSION)){session_start();}
 require_once('config/functions.php');
 require_once('config/connection.php');
 ?>
+<!DOCTYPE html>
 <html>
   <head>
     <link rel="stylesheet" href="/css/master.css">
     <link rel="icon" href="img/favicon.svg" type="image/x-icon">
     <script type="text/javascript" src="config/scripts.js">
+    var myModal = document.getElementById('myModal')
+    var myInput = document.getElementById('myInput')
 
+    myModal.addEventListener('shown.bs.modal', function () {
+      myInput.focus()
+    })
     </script>
     <title>CHIKA</title>
     <!-- Bootstrap CSS (jsDelivr CDN) -->

@@ -40,7 +40,12 @@ function operation_select($pdo){
     echo "<select name='operation' class='form-select' required>";
     echo "<option value='' disabled selected>Выберите операцию</option>";
     foreach ($pdo->query($operation) as $row) {
-    echo "<option name='' value='".$row['id']."'>".$row['name']."</option>";
+      if((isset($_GET['op']))&&(($_GET['op']==$row['id']))){
+        $selected=" selected";
+      }else{
+        $selected="";
+      }
+    echo "<option ".$selected." name='' value='".$row['id']."'>".$row['name']."</option>";
     }
     echo "</select>";
     }

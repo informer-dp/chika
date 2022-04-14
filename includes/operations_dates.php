@@ -6,7 +6,6 @@ while($row=mysql_fetch_assoc($res)){
 	echo $order['id'],"<br/>",$order['type']," ",$order['comment'];
 }*/
 ?>
-
 <?php
 ini_set('error_reporting', E_ALL);
 ini_set('display_errors', 1);
@@ -80,7 +79,14 @@ $total_day=0;
   <td>".$row['quantity']."</td>
   <td align='right'>".number_format(($row['price']/100), 2, '.', '')."</td>
   <td align='right'>".number_format($cost, 2, '.', '')."</td>
-  <td>".$paid."</td>
+  <td><a href='/?inc=operation_details&opid=".$row['id']."&worker=".$row['worker']."&op=".$row['operation']."' title='Редактировать запись'><img src='img/edit_note_black_24dp.svg'></a>
+  <a
+  href='../actions/operation_delete.php?id=".$row['id']."'
+  title='Удалить операцию из списка'
+  data-bs-toggle=\"modal\" data-bs-target=\"#exampleModal\"
+  ><img src='img/clear_black_24dp.svg'></a>
+
+  </td>
   </tr>";
 
   }
@@ -111,4 +117,21 @@ $total_day=0;
 <?php
 include_once 'forms/operation_add.php';
 ?>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Удаление операции</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Чи, подумай и определись: ты действительно хочешь удалить операцию из журнала?И нафига оно тебе надо?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
+        <button type="button" class="btn btn-primary">Удалить</button>
+        <a class="btn btn-primary" href="../actions/operation_delete.php?id=<?php echo $row['id'];?>">Удалить</a>
+      </div>
+    </div>
+  </div>
 </div>

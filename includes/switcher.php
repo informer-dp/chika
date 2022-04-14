@@ -60,8 +60,8 @@ if(isset($_GET['inc'])){
     case 'card_operation':
       include_once('card_operation.php');
       break;
-    case 'operations':
-      include_once('operations.php');
+    case 'operation_details':
+      include_once('operation_details.php');
       break;
     case 'operations_dates':
       include_once('operations_dates.php');
