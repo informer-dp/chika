@@ -130,7 +130,6 @@ include_once 'forms/operation_add.php';
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
         <button type="button" class="btn btn-primary">Удалить</button>
-        <a class="btn btn-primary" href="../actions/operation_delete.php?id=<?php echo $row['id'];?>">Удалить</a>
       </div>
     </div>
   </div>
