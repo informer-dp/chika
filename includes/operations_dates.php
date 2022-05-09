@@ -81,8 +81,8 @@ $total_day=0;
   <td align='right'>".number_format($cost, 2, '.', '')."</td>
   <td><a href='/?inc=operation_details&opid=".$row['id']."&worker=".$row['worker']."&op=".$row['operation']."' title='Редактировать запись'><img src='img/edit_note_black_24dp.svg'></a>
   <a
-  href='../actions/operation_delete.php?id=".$row['id']."'
-  title='Удалить операцию из списка'
+  href='#'
+  title='Удалить операцию из списка' onclick='operation_delete=".$row['id'].";'
   data-bs-toggle=\"modal\" data-bs-target=\"#exampleModal\"
   ><img src='img/clear_black_24dp.svg'></a>
 
@@ -125,11 +125,11 @@ include_once 'forms/operation_add.php';
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        Чи, подумай и определись: ты действительно хочешь удалить операцию из журнала?И нафига оно тебе надо?
+        Чи, подумай и определись: ты действительно хочешь удалить операцию из журнала? И нафига оно тебе надо? Может оставишь?
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
-        <button type="button" class="btn btn-primary">Удалить</button>
+        <button type="button" class="btn btn-primary" onclick="var deleting='../actions/operation_delete.php?id='+operation_delete;  window.location.href = deleting;">Удалить</button>
       </div>
     </div>
   </div>

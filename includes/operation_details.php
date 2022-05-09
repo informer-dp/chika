@@ -62,6 +62,8 @@ if(isset($_GET['opid'])){
     <?php include_once'forms/operation_edit.php';?>
   </div>
 </div>
+<a href="/?inc=operations_dates">&laquo;&laquo;&nbsp;К общему списку операций</a>&nbsp;&nbsp;&nbsp;
+<a href="/?inc=operations_dates&worker=<?php echo $_GET['worker'];?>">К списку операций <?php echo get_name_by_id($pdo,"helper_workers",$_GET['worker']);?>&nbsp;&raquo;&raquo;</a>
 <!--<div id="stripe"><?php //include_once 'stripe.php';?></div>-->
 
 <?php
