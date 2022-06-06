@@ -1,6 +1,6 @@
 <?php
 $host = 'localhost';
-$db   = 'chika';
+$db   = 'store';
 $user = 'root';
 $pass = '';
 $charset = 'utf8';

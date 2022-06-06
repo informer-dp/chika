@@ -12,7 +12,33 @@
         <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <img src='img/assignment_white_24dp.svg'>&nbsp;  Операции (список человеков)
+              <img src='img/summarize_white_24dp.svg'> Журналы
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+              <li><a class="dropdown-item" href="/?inc=operations_dates"><img src='img/assignment_black_24dp.svg'>  Производственные операции</a></li>
+              <li><a class="dropdown-item" href="/?inc=helper_operations"><img src='img/view_list_black_24dp.svg'>  Заказы</a></li>
+              <li><a class="dropdown-item" href="/?inc=helper_products"><img src='img/paid_black_24dp.svg'>  Кассовые операции</a></li>
+              <li><a class="dropdown-item" href="/?inc=salary"><img src='img/paid_black_24dp.svg'>  Зарплата</a>
+              </li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="/?inc=about">Some else</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <img src='img/book_white_24dp.svg'> Store
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+              <li><a class="dropdown-item" href="/?inc=workers"><img src='img/assignment_black_24dp.svg'>  Icoming operations</a></li>
+              <li><a class="dropdown-item" href="/?inc=helper_operations"><img src='img/view_list_black_24dp.svg'>  Outgoing operations</a></li>
+              <li><a class="dropdown-item" href="/?inc=helper_products"><img src='img/view_list_black_24dp.svg'>  Viewer</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="/?inc=about">Some else</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src='img/assignment_white_24dp.svg'>&nbsp;  Производственные операции
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
               <li><a class="dropdown-item" href="/?inc=operations_dates">Все</a></li>
@@ -24,6 +50,20 @@
               }
               ?>
             </ul>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <img src='img/paid_white_24dp.svg'>&nbsp;  Зарплата
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                <li><a class="dropdown-item" href="/?inc=salary">Все</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <?php
+                $worker = "SELECT * FROM `helper_workers` ORDER BY `name`";
+                foreach ($pdo->query($worker) as $row) {
+                echo '<li><a class="dropdown-item" href="/?inc=salary&worker='.$row['id'].'">'.$row['name'].'</a></li>';
+                }
+                ?>
+              </ul>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -32,6 +72,7 @@
             <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
               <li><a class="dropdown-item" href="/?inc=workers"><img src='img/account_circle_black_24dp.svg'>  Сотрудники</a></li>
               <li><a class="dropdown-item" href="/?inc=helper_operations"><img src='img/pending_actions_black_24dp.svg'>  Операции</a></li>
+              <li><a class="dropdown-item" href="/?inc=helper_products"><img src='img/view_list_black_24dp.svg'>  Номенклатура</a></li>
               <li><hr class="dropdown-divider"></li>
               <li><a class="dropdown-item" href="/?inc=about">О программе</a></li>
             </ul>
@@ -69,6 +110,12 @@ if(isset($_GET['inc'])){
     case 'workers':
       include_once('workers.php');
       break;
+    case 'store':
+      include_once('store.php');
+      break;
+      case 'salary':
+        include_once('salary.php');
+        break;
     default:
       include_once('dashboard.php');
       break;

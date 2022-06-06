@@ -22,7 +22,7 @@ function signin_check ($login,$pass){
 }
  function connect_to_db(){
    $host = 'localhost';
-   $db   = 'chika';
+   $db   = 'store';
    $user = 'root';
    $pass = '';
    $charset = 'utf8';
@@ -34,6 +34,7 @@ function signin_check ($login,$pass){
        PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8",
    ];
    $pdo = new PDO($dsn, $user, $pass, $opt);
+   return $pdo;
 }
 function operation_select($pdo){
     $operation = "SELECT * FROM `helper_operations` ORDER BY `name`";

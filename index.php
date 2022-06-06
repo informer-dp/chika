@@ -1,5 +1,8 @@
 <?php
 /*База учета для Чирвы*/
+ini_set('error_reporting', E_ALL);
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
 //Проверка авторизации
 //Подключение библиотеки функций
 if(!isset($_SESSION)){session_start();}
