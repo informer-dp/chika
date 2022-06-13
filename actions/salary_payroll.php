@@ -4,6 +4,7 @@ require_once'../config/connection.php';
 require_once'../config/functions.php';
 //adding a new operation
  if(isset($_POST)){
+   $_POST['summa']=abs($_POST['summa']);
    //$values=$_POST;
      $allowed = array(
          "payment_date",

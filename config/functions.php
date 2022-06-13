@@ -22,9 +22,9 @@ function signin_check ($login,$pass){
 }
  function connect_to_db(){
    $host = 'localhost';
-   $db   = 'store';
-   $user = 'root';
-   $pass = '';
+   $db   = 'jnylmamd_chirva';
+   $user = 'jnylmamd_chirva';
+   $pass = 'q3MM2_chika';
    $charset = 'utf8';
    $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
    $opt = [

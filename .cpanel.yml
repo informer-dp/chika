@@ -1,0 +1,10 @@
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/jnylmamd/crm.sonar.com.ua
+    - /bin/cp index.html $DEPLOYPATH
+    - /bin/cp -R actions $DEPLOYPATH
+    - /bin/cp -R classes $DEPLOYPATH
+    - /bin/cp -R forms $DEPLOYPATH
+    - /bin/cp -R img $DEPLOYPATH
+    - /bin/cp -R includes $DEPLOYPATH
+    - /bin/cp -R actions $DEPLOYPATH

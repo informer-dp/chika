@@ -1,6 +1,6 @@
 <?php
 /******STORE*********/
-class Store{
+class Warehouse{
 public function __construct(){
   }
   public static function connect_to_db(){
@@ -20,11 +20,12 @@ public function __construct(){
      return $pdo;
   }
    public static function get_category(){
-  }
-   public static function put_product($product){//оприходование товара
 
   }
-   public static function wroff_product($product){//списание товара
+   public static function put_product(){
+
+  }
+   public static function sale_product($product){
 
 
   }
