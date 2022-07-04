@@ -125,7 +125,8 @@ public function __construct(){
   }
   public static function payroll($worker){
     require_once('config/functions.php');
-    $pdo=connect_to_db();
+    //$pdo=connect_to_db();
+    
     ini_set('error_reporting', E_ALL);
     ini_set('display_errors', 1);
     ini_set('display_startup_errors', 1);

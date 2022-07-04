@@ -20,7 +20,7 @@ function signin_check ($login,$pass){
     header("Location:signin.php");
   }
 }
- function connect_to_db(){
+function connect_to_db(){
    $host = 'localhost';
    $db   = 'jnylmamd_chirva';
    $user = 'jnylmamd_chirva';

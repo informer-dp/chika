@@ -1,6 +1,6 @@
 <?php
-/*********ИЗДЕЛИЕ***********/
-class Product{
+/*********БАЗОВЫЙ КЛАСС***********/
+class Commo{
   public function __construct(){
 
   }
@@ -20,11 +20,6 @@ class Product{
      $pdo = new PDO($dsn, $user, $pass, $opt);
      return $pdo;
   }
-  public static function components($article){
-
-  }
-  public static function operations($article){
-
-  }
+  
 }
  ?>

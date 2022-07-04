@@ -16,7 +16,7 @@ if(isset($_POST)){
    $password= htmlentities($_POST['password']);
    $stmt = $pdo->prepare('SELECT * FROM users WHERE users.login=? AND users.password=md5(?)');
    $stmt->execute([$login,$password]);
-   $user = $stmt->fetch();
+   $user = $stmt->fetch();g
    if(strlen($user['login'])>3){
    //echo $user['first_name']." ".$user['last_name'];
    $_SESSION['user']=$user;

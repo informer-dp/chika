@@ -25,7 +25,7 @@ session_msg();
           </tr>";
   foreach ($stmt as $row) {
   echo "<tr>
-  <td>".$row['name']."</td>
+  <td><a href='/?inc=worker&id=".$row['id']."'>".$row['name']."</a></td>
   <td>".$row['phone']."</td>
   <td>".$row['function']."</td>
   <td>".$row['notes']."</td>

@@ -5,6 +5,7 @@ require_once'../config/functions.php';
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 //adding a new operation
  if(isset($_POST)){
+   $_POST['price']=abs($_POST['price']);
       //echo "<pre>"; print_r($_POST); echo "</pre>";
      $allowed = array(
          "name",

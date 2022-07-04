@@ -1,14 +1,17 @@
 <?php
-/*********ИЗДЕЛИЕ***********/
-class Product{
+/*********БАЗОВЫЙ КЛАСС***********/
+class Model{
   public function __construct(){
 
   }
   public static function connect_to_db(){
      $host = 'localhost';
-     $db   = 'jnylmamd_chirva';
+     /*$db   = 'jnylmamd_chirva';
      $user = 'jnylmamd_chirva';
-     $pass = 'q3MM2_chika';
+     $pass = 'q3MM2_chika';*/
+     $db   = 'store';
+     $user = 'root';
+     $pass = '';
      $charset = 'utf8';
      $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
      $opt = [
@@ -20,11 +23,6 @@ class Product{
      $pdo = new PDO($dsn, $user, $pass, $opt);
      return $pdo;
   }
-  public static function components($article){
 
-  }
-  public static function operations($article){
-
-  }
 }
  ?>
