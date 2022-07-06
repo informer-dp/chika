@@ -10,7 +10,7 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarScroll">
         <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
-          <li class="nav-item dropdown">
+        <!--  <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               <img src='img/summarize_white_24dp.svg'> Журналы
             </a>
@@ -35,7 +35,7 @@
               <li><hr class="dropdown-divider"></li>
               <li><a class="dropdown-item" href="/?inc=about">Some else</a></li>
             </ul>
-          </li>
+          </li>-->
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             <img src='img/assignment_white_24dp.svg'>&nbsp;  Производственные операции
