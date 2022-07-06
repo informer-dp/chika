@@ -126,7 +126,7 @@ public function __construct(){
   public static function payroll($worker){
     require_once('config/functions.php');
     //$pdo=connect_to_db();
-    
+
     ini_set('error_reporting', E_ALL);
     ini_set('display_errors', 1);
     ini_set('display_startup_errors', 1);
@@ -224,7 +224,7 @@ public function __construct(){
          echo "<tr>
          <td>".$row['id']."</td>
          <td>".get_name_by_id($pdo,"users",$row['user'])."</td>
-         <td>".$row['payment_date']."</td>
+         <td>".human_date_format($row['payment_date'])."</td>
          <td align='right'><strong>".number_format(($row['summa']/100), 2, '.', '')."</strong></td>
          </td>
          </tr>";
