@@ -113,6 +113,9 @@ if(isset($_GET['inc'])){
       case 'worker':
         include_once('./app/views/view_worker.php');
         break;
+        case 'helper_products':
+          include_once('./app/views/view_products.php');
+        break;
     case 'store':
       include_once('store.php');
       break;

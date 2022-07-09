@@ -38,7 +38,7 @@
  </div>
  <hr>
  <?php
-   echo "<table class='table table-hover table-bordered'>";
+   echo "<table class='table table-striped table-hover table-bordered'>";
    echo"<tr>
          <th>ID</th>
          <th>Изделие</th>
