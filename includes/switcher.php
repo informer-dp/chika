@@ -72,7 +72,7 @@
             <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
               <li><a class="dropdown-item" href="/?inc=workers"><img src='img/account_circle_black_24dp.svg'>  Сотрудники</a></li>
               <li><a class="dropdown-item" href="/?inc=helper_operations"><img src='img/pending_actions_black_24dp.svg'>  Операции</a></li>
-              <li><a class="dropdown-item" href="/?inc=helper_products"><img src='img/view_list_black_24dp.svg'>  Номенклатура</a></li>
+              <li><a class="dropdown-item" href="/?inc=helper_products"><img src='img/view_list_black_24dp.svg'>  Изделия</a></li>
               <li><hr class="dropdown-divider"></li>
               <li><a class="dropdown-item" href="/?inc=about">О программе</a></li>
             </ul>

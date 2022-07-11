@@ -16,7 +16,7 @@
     </div>
     <div class="mb-3 col-auto">
       <label for="product" class="form-label">Изделие</label>
-        <?php product_select($pdo);?>
+        <?php product_select($pdo,$row['product']);?>
       </div>
       <div class="mb-3 col-auto">
        <label for="price" class="form-label">Цена</label>
