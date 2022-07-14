@@ -19,8 +19,9 @@ echo "</table>";
   $product=$products::get_product_details("helper_products",$row_id);
   $operations=$products::get_product_operations("helper_operations",$row_id);
   echo "<br /><h2>Карточка продукта <span style='color:#CCCCCC;'>".$product['name']."</h2><hr />";
-echo "<table class='table table-striped table-hover table-bordered'>
-  <tr><th>Название:</th><td>".$product['name']."</td></tr>
+echo "<table class='table table-striped table-hover table-bordered mt-5'>
+  <tr><th>Название:</th><td><strong>".$product['name']."</strong></td></tr>
+  <tr><th>Артикул:</th><td>".$product['article']."</td></tr>
   <tr><th>Цена:</th><td>".$product['price']."</td></tr>
 </table>";
 ?>
@@ -32,11 +33,11 @@ echo "<table class='table table-striped table-hover table-bordered'>
 <div class="collapse" id="collapseExample">
   <div class="card card-body">
      <h4 style='color:#CCCCCC;'>Редактировать изделие <span ><?echo $product['name'];?></span></h4><hr>
-    <?php include_once'forms/product_add.php';?>
+    <?php include_once'forms/product_edit.php';?>
   </div>
 </div>
 <?php
-echo "<h4 style='color:#CCCCCC;' class='secondary mt-5'>Операции по продукту ".$product['name']."</h4>";
+echo "<hr class='mt-5' /><h4 style='color:#CCCCCC;' class='secondary mt-5'>Операции по продукту ".$product['name']."</h4>";
 ?>
 <p>
   <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample1" role="button" aria-expanded="false" aria-controls="collapseExample1">
@@ -57,9 +58,8 @@ foreach ($operations as $k => $v) {
 }
 echo "</table>";
 ?>
-
-
 </div>
+<hr class='mt-5' />
 <a href="/?inc=helper_products"><img class="bordered" src='img/arrow_back_black_24dp.svg'>Назад к справочнику изделий</a>
 <?php
 }
