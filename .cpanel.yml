@@ -1,7 +1,7 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/jnylmamd/crm.sonar.com.ua
+    - export DEPLOYPATH=/home/
     - /bin/cp index.html $DEPLOYPATH
     - /bin/cp -R actions $DEPLOYPATH
     - /bin/cp -R app $DEPLOYPATH
