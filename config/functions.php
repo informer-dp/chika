@@ -22,8 +22,8 @@ function signin_check ($login,$pass){
 }
 function connect_to_db(){
    $host = 'localhost';
-   $db   = 'jnylmamd_chirva';
-   $user = 'jnylmamd_chirva';
+   $db   = 'chika';
+   $user = 'chika';
    $pass = 'q3MM2_chika';
    $charset = 'utf8';
    $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
