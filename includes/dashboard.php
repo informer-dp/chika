@@ -9,7 +9,10 @@ ini_set('display_startup_errors', 1);
 <?php
 /***********СЧЕТЧИК ОПЕРАЦИЙ*************/
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-$operations = "SELECT operation, COUNT(*) AS counting FROM `operations` GROUP BY `operation`";
+$operations = "SELECT operations.operation, SUM(operations.quantity) AS quantity, helper_operations.name FROM operations
+INNER JOIN helper_operations ON operations.operation=helper_operations.id
+GROUP BY operation";
+//$operations="SELECT * FROM operations ORDER BY operation ASC";
 $stmt=$pdo->query($operations);
 $op=" по всем изделиям";
 ?>
@@ -18,19 +21,18 @@ $op=" по всем изделиям";
 <?php
   echo "<table class='table table-striped table-hover table-bordered'>";
   echo"<tr>
-        <th>Изделие</th>
+        <th>ID</th>
         <th>Название операции</th>
         <th>Количество</th>
           </tr>";
   //$date=date("Y-m-d");
   foreach ($stmt as $row) {
-    
   echo "<tr>
-  <td>"./*get_name_by_id($pdo,"helper_products",$row['product']).*/"</td>
-  <td><a href='/?inc=card_operation&opid=".$row['operation']."'>".get_name_by_id($pdo,"helper_operations",$row['operation'])."</a></td>
+  <td>".$row['operation']."</td>
+  <td><a href='/?inc=card_operation&opid=".$row['operation']."'>".$row['name']."</a></td>
   <td align='right'>";
   //print_r($row);
-  echo $row['counting']."</td>;
+  echo $row['quantity']."</td>;
   </tr>";
 }
   echo "</table>";
