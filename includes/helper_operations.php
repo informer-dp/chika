@@ -12,7 +12,7 @@
    $operations = "SELECT * FROM helper_operations WHERE `product`=:product ORDER BY `name` ASC";
    $stmt=$pdo->prepare($operations, array(PDO::ATTR_CURSOR => PDO::CURSOR_FWDONLY));
    $stmt->execute(array('product' => $_GET['product']));
-   $op=" по изделию ".get_name_by_id($pdo,"helper_products",int($_GET['product']));
+   $op=" по изделию ".get_name_by_id($pdo,"helper_products",abs($_GET['product']));
 
  }
    /*echo '<form class="d-flex" method="post" action="/?inc=operations&worker='.$_GET['worker'].'">';
